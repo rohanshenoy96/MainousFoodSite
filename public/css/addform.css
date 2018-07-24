@@ -1,0 +1,54 @@
+#add-head{
+    color : white;
+    margin-bottom : 0;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 35px;
+    padding :25px 0;
+    padding-left: 10%;
+    
+}
+.add-div{
+    border-top-left-radius : 15px;
+    border-top-right-radius : 15px;
+    background-color : #252525;
+    
+}
+
+.dim{
+    width : 75px;
+    height : 75px! important;
+}
+.dim2{
+    width : 100px! important;
+    height : 100px! important;
+}
+
+.dim3{
+    height : 750px! important;
+}
+
+.btn-lg{
+    padding : 10px 20px;
+    margin-left : 20px;
+}
+
+.checked{
+    color : yellow;
+}
+
+.rating{
+    font-size: 22px;
+}
+
+
+/*.crop {*/
+/*    width: 200px;*/
+/*    height: 150px;*/
+/*    overflow: hidden;*/
+/*}*/
+
+.crop img {
+    width: 1440px;
+    height: 554.73px;
+    margin: 0 0 0 0;
+}

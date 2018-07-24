@@ -1,0 +1,97 @@
+<% include ../partials/header %>
+    <section id="inner-headline">
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            <div class="inner-heading">
+              <h2>Create A Recipe</h2>
+            </div>
+          </div>
+          <div class="span8">
+            <ul class="breadcrumb">
+              <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i>Features<i class="icon-angle-right"></i></li>
+              <li class="active"><a href="/add">Add Recipe</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <br><br>
+    <div class="container">
+    <div class="add-div"><h1 id="add-head" class="txt-center">Edit Recipe "<%= recipe.name %>"</h1></div>
+    <div class="thumbnail">
+    <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST" role="form" class="contactForm">
+        <div class="row">
+            <br>
+            <div class="span10 form-group" style="margin-left : 10%;">
+                <label>Title:</label>
+                <input type="text" name="recipe[name]" class="form-control" id="name" value="<%= recipe.name %>" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+            </div>
+            
+            <div class="span3 form-group" style="margin-left : 10%;">
+                <label>Hands-On-Time(in Mins):</label>
+                <input type="text" class="form-control" name="recipe[hot]" id="hot" value="<%= recipe.hot %>" required />
+                <div class="validation"></div>
+            </div>
+            
+            <div class="span3 form-group" style="margin-left : 6.6%;">
+                <label>Total-Time(Mins):</label>
+                <input type="text" class="form-control" name="recipe[total_time]" id="total_time" value="<%= recipe.total_time %>" required />
+                <div class="validation"></div>
+            </div>
+            
+            <div class="span3 form-group" style="margin-left : 6.6%;margin-right:0">
+                <label>Rating:</label>
+                <input type="text" class="form-control" name="recipe[rating]" id="rating" value="<%= recipe.rating %>" required />
+                <div class="validation"></div>
+            </div>
+            
+            <div class="span5 form-group" style="margin-left : 10%;">
+                <label>Yields How Many?</label>
+                <input type="text" class="form-control" name="recipe[yields]" id="yields" value="<%= recipe.yields %>" required>
+                <div class="validation"></div>
+            </div>
+            <div class="span5 form-group" style="margin-left : 2.3%;">
+                <label>Image URL:</label>
+                <input type="text" class="form-control" name="recipe[image]" id="image" value="<%= recipe.image %>" required />
+                <div class="validation"></div>
+            </div>
+            
+            <div class="span10 form-group" style="margin-left : 10%;">
+                <label>Description:</label>
+                <input type="text" class="form-control" name="recipe[desc]" id="desc" value="<%= recipe.desc %>" required>
+                <div class="validation"></div>
+            </div>
+            
+            <div class="span10 form-group" style="margin-left : 10%;">
+                <label>Ingredients(1 in each line)</label>
+                <!--<input type="text" class="form-control" name="email" id="email" placeholder="Enter hands-on-time in Mins..." data-rule="email" data-msg="Please enter a valid email" />-->
+                <textarea name="recipe[ingredients]" rows="5" cols="100"><%= recipe.ingredients %></textarea>
+                <div class="validation"></div>
+            </div>
+            
+            <div class="span10 form-group" style="margin-left : 10%;">
+                <label>Nutrition Information(1 in each line)</label>
+                <!--<input type="text" class="form-control" name="email" id="email" placeholder="Enter hands-on-time in Mins..." data-rule="email" data-msg="Please enter a valid email" />-->
+                <textarea name="recipe[nutrition_info]" rows="5" cols="100"><%= recipe.nutrition_info %></textarea>
+                <div class="validation"></div>
+            </div>
+            
+            <div class="span10 form-group" style="margin-left : 10%;">
+                <label>Steps(1 in each line)</label>
+                <!--<input type="text" class="form-control" name="email" id="email" placeholder="Enter hands-on-time in Mins..." data-rule="email" data-msg="Please enter a valid email" />-->
+                <textarea name="recipe[steps]" rows="10" cols="100"><%= recipe.steps %></textarea>
+                <div class="validation"></div>
+            </div>
+            
+            
+            <div class="span10 form-group" style="margin-left : 10%;">
+                <button type="submit" class="btn btn-dark btn-lg">Change your Recipe</button>
+            </div>
+        </div>
+    </form>
+    </div>
+    </div>
+<% include ../partials/footer %>

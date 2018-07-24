@@ -1,0 +1,155 @@
+<% include ../partials/header %>
+
+<section id="inner-headline">
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            <div class="inner-heading">
+              <h4 style="color:white; padding-top:20px;"><%= recipe.name %></h4>
+            </div>
+          </div>
+          <div class="span8">
+            <ul class="breadcrumb">
+              <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i>Features<i class="icon-angle-right"></i></li>
+              <li class="active"><a href="/recipes">View Our recipe</a><i class="icon-angle-right"></i><a href="/recipes/<%= recipe._id %>"><%= recipe.name %></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br><br>
+    
+    
+    
+    <section id="content">
+      <div class="container">
+        <div class="row">
+          <div class="span8">
+            <article>
+              <div class="top-wrapper">
+                <div class="post-heading">
+                  <h3><a href="#"><%= recipe.name %></a>  <span class="rating pull-right"> 
+                    <% for(var i=1; i<=5; i++){ %>
+                        <% console.log(recipe.rating) %>
+                        <% if(i<=recipe.rating) {%>
+                            <span class="fa fa-star checked"></span>
+                        <% }else{ %>
+                            <span class="fa fa-star"></span>
+                        <% } %>
+                    <% } %>
+                    </span>
+                  </h3>
+                </div>
+                <!-- start flexslider -->
+                <br>
+                <div class="flexslider">
+                  <ul class="slides">
+                    <li>
+                      <img class="dim3" src="<%= recipe.image %>" alt="" />
+                    </li>
+                  </ul>
+                </div>
+                <!-- end flexslider -->
+              </div>
+              <h3>Description:</h3>
+              <p><b>
+                <%= recipe.desc %>
+              </b>
+              </p>
+            </article>
+          </div>
+          <div class="span4">
+            <aside class="right-sidebar">
+                  <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST" class="form-check-inline">
+                      <a class="btn btn-success btn-lg"href="/recipes/<%= recipe._id %>/edit">Edit</a>
+                      <button class="btn btn-danger btn-lg">Delete</button>
+                  </form>
+              <div class="widget">
+                  
+                  
+                <h5 class="widgetheading">Ingredients</h5>
+                <ul class="folio-detail">
+                  <table class="table table-striped">
+                      <thead>
+                          <tr>
+                              <th>Ingredients WIth their specific Quantity</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        <% for(var i=0;i<ingredients.length; i++){ %>
+                            <tr>
+                                <td>
+                                    <%= ingredients[i] %>
+                                </td>
+                            </tr>
+                        <% } %>
+                      </tbody>
+                  </table>
+                </ul>
+              </div>
+              <div class="widget">
+                <h5 class="widgetheading">Total Nutrition</h5>
+                <div class="accordion" id="accordion2">
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle active" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+									<i class="icon-minus"></i> Nutrition Information </a>
+                    </div>
+                    <div id="collapseOne" class="accordion-body collapse in">
+                      <div class="accordion-inner">
+                        <% for(var i=0; i<nutrition_info.length ; i++){ %>
+                            <p><%= nutrition_info[i] %></p>
+                        <% } %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion" id="accordion3">
+                  <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseTwo">
+									<i class="icon-minus"></i> Yields </a>
+                    </div>
+                    <div id="collapseTwo" class="accordion-body collapse in">
+                      <div class="accordion-inner">
+                        <p><%= recipe.yields %></p>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                  </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+    <div class="row">
+              <div class="span10">
+                <h4><strong>Steps</strong></h4>
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#one" data-toggle="tab"><i class="icon-briefcase"></i> Step1</a></li>
+                  <% for(var i=1; i <steps.length ; i++){ %>
+                        <li><a href="#<%= i %>" data-toggle="tab"><i class="icon-briefcase"></i>Steps <%= i+1 %></a></li>
+                  <% } %>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="one">
+                    <p>
+                      <%= steps[0] %>
+                    </p>
+                  </div>
+                  <% for(var i=1; i<steps.length; i++){%>
+                  <div class="tab-pane" id="<%= i %>">
+                    <p>
+                      <%= steps[i] %>
+                    </p>
+                  </div>
+                  <% } %>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+<% include ../partials/footer %>

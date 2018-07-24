@@ -1,0 +1,21 @@
+{
+  "name": "foodsite",
+  "version": "1.0.0",
+  "description": "food site for competition",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Rohan Shenoy",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "ejs-mate": "^2.3.0",
+    "express": "^4.16.3",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.2.4",
+    "morgan": "^1.9.0"
+  }
+}

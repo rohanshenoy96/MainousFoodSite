@@ -1,0 +1,94 @@
+<% include ../partials/header %>
+
+    <section id="inner-headline">
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            <div class="inner-heading">
+              <h2>Our Finest Recipe</h2>
+            </div>
+          </div>
+          <div class="span8">
+            <ul class="breadcrumb">
+              <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i>Features<i class="icon-angle-right"></i></li>
+              <li class="active"><a href="/recipes">View All recipe</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br><br>
+    <section id="content">
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            <aside class="left-sidebar">
+              <div class="widget">
+                <form class="form-search" action="/search" method="post">
+                  <input name="q" placeholder="Type something" type="text" class="input-medium search-query">
+                  <button type="submit" class="btn btn-square btn-theme">Search</button>
+                </form>
+              </div>
+              <div class="widget">
+                <h5 class="widgetheading">Recent Recipes</h5>
+                <ul class="recent">
+                    <% for(var i=0; i<4; i++){ %>
+                        <li>
+                            <img src="<%= recipes[recipes.length - i -1].image %>" class="pull-left dim" alt="" />
+                            <p><a href="/recipes/<%= recipes[recipes.length -1 -i]._id %>"><%= recipes[recipes.length - i - 1].name %></a></p>
+                            <p>
+                                <%= recipes[recipes.length-i-1].desc.substr(0,30) %>...
+                            </p>
+                        </li>
+                        <br>
+                    <% } %>
+                </ul>
+              </div>
+              <div class="widget">
+                <h5 class="widgetheading">Sort By</h5>
+                <ul class="tags">
+                  <li><a href="/recipes/recency">Date Created</a></li>
+                  <li><a href="/recipes/alpha">Alphabet</a></li>
+                  <li><a href="/recipes/rating">Rating</a></li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+          <div class="span8">
+              <div class="comment-area">
+                  <% for(var i=0; i<recipes.length; i++){ %>
+                  <div class="media">
+                    <a href="/recipes/<%= recipes[i]._id %>" class="thumbnail pull-left"><img class="dim2" src="<%= recipes[i].image %>" alt="" /></a>
+                    <div class="media-body">
+                      <div class="media-content">
+                        <a href="/recipes/<%= recipes[i]._id %>"><h4><%= recipes[i].name %></h4></a>
+                        <p>
+                          <%= recipes[i].desc %>
+                        </p>
+                        
+                        <h4 class="align-right">
+                            <span class="rating pull-right"> 
+                                
+                                <% for(var j=1; j<=5; j++){ %>
+                                    <% console.log(recipes[i].rating + "-->" + j) %>
+                                    <% console.log(recipes[i].rating) %>
+                                    <% if(j<=recipes[i].rating) {%>
+                                        <span class="fa fa-star" style="color:yellow"></span>
+                                    <% }else{ %>
+                                        <span class="fa fa-star"></span>
+                                    <% } %>
+                                <% } %>
+                            </span>
+                        </h4>
+                      </div>
+                        
+                    </div>
+                  </div>
+                  <% } %>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<% include ../partials/footer %>

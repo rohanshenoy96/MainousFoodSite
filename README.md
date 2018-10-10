@@ -14,24 +14,42 @@ https://glacial-atoll-50379.herokuapp.com/
 # Features - Please carefully read this
 ---------------------------------------
 1) A Home Page - Shows some of our Recipes.
+
 2) Abous Us Page - Gives more information about the websites Including features.
+
 3) Features which has two sub section
+  
   (i) Create Recipe - Which allows one to create recipes
+  
   (ii) View All recipes - Shows all recipe
+      
       ->Individual recipe Page
+      
       ->Search Feature (First by name...If not found then By ingredients automatically)
+      
       ->Edit Feature
+      
       ->Delete Feature
+      
       ->Shows All Ingredients
+      
       ->Shows Nutrition Information (New)
+      
       ->Steps to create that recipe (New)
+      
       ->Gives Description about the Dish (New)
+      
       ->Hands on Time (New)
+      
       ->Total time (New)
+      
       ->How many People can it be served (New)
-4)Testimonials - USer Reviews (Dummy)
-5)Contact Page (Dummy)
-6)Fully responsive made with Bootstrap...
+
+4) Testimonials - USer Reviews (Dummy)
+
+5) Contact Page (Dummy)
+
+6) Fully responsive made with Bootstrap...
 
 # Prerequisites
 ------------------

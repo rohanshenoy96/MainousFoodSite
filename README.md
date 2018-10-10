@@ -56,13 +56,12 @@ https://glacial-atoll-50379.herokuapp.com/
 1) Node - latest version if possible but not necessary
 https://nodejs.org/en/download/
 
-2)Browser - Preferably Chrome
+2) Browser - Preferably Chrome // No need of mongo db in the system as I'm using mlab - an online mongo database
 
-// No need of mongo db in the system as I'm using mlab - an online mongo database
 
 # How to run
 -------------------
-1) Make sure you have all the packages which are mentioned in package.json(npm install packageName - if any are not there)
+1) Make sure you have all the packages which are mentioned in package.json using npm install.
 2) Open the teminal and type "node app.js" (If due to any reasons it is not working please check the demo link as it contains a hosted copy).
 3) Open localhost:3000 or if on cloud9 then open preview.
 
